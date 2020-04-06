@@ -10,8 +10,9 @@ router.get('/', async (req,res) => {
 
 router.post('/', async (req,res) => {
     const { name, isbn,country} =  req.body;
+    const imagePath= "/uploads/" + req.file.filename;
     console.log(req.body);
-    const newGallery = new Gallery({name,isbn ,country});
+    const newGallery = new Gallery({ name,isbn ,country,imagePath });
     await newGallery.save();
     console.log(newGallery);
     // res.send('received heheh!!!') ;

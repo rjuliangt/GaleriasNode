@@ -5,7 +5,7 @@ document.getElementById('galeries')
    const name = document.getElementById('name').value;
    const country = document.getElementById('country').value;
    const isbn = document.getElementById('isbn').value;
-   const imag =  document.getElementById('image').file;
+   const imag =  document.getElementById('image').files;
 
    const fromData =  new FormData();
    fromData.append('image',imag[0]);
@@ -14,7 +14,7 @@ document.getElementById('galeries')
    fromData.append('isbn',isbn);
    
    const galeriesServ =new GaleriesServices();
-   galeriesServ.postPaseo(fromData)
-   console.log(name,country,isbn,imag)
+   galeriesServ.postPaseo(fromData);
+   console.log(name,country,isbn,imag[0])
    e.preventDefault();
 })

@@ -7,10 +7,11 @@ class GaleriesService {
        const paseo = await res.json()
        return paseo
     }
-    async postPaseo(paseo)
-    {
-        const res = await fetch(this.URI, { method: "POST" , body: paseo}
-        )
+    async postPaseo(paseo) {
+        const res = await fetch(this.URI, { 
+            method: "POST",
+             body: paseo
+        });
         const data =  await res.json()
         console.log(data)
     }

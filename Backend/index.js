@@ -7,13 +7,15 @@ const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');   
 const path = require('path');
+const cors = require('cors');
 
 //initializacion
 const app =  express();
 require('./database')
 
 //settings
-app.set('port',process.env.PORT || 4000);
+app.set('port',process.env.PORT || 3000);
+
 //middlewares
 app.use(morgan('dev'));
 const storage = multer.diskStorage({
@@ -23,10 +25,10 @@ const storage = multer.diskStorage({
     }
 });
 
-app.use(multer({storage}).single('image'));
-app.use(express.urlencoded({extended: false}));
+app.use(multer({ storage }).single('image'));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //envio de json
-
+app.use(cors());
 //Router
 app.use('/api/paseos',require('./routes/paseos'));
 
