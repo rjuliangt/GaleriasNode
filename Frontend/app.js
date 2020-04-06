@@ -20,7 +20,7 @@ document.getElementById('galeries')
    fromData.append('isbn',isbn);
    const ui = new UI();
    ui.AddNewPaseo(fromData);
-   console.log(name,country,isbn,imag[0])
+   ui.renderMessage('New travel added', 'success',3000)
    e.preventDefault();
 });
 
@@ -29,6 +29,7 @@ document.getElementById('galeries-cards')
    if(e.target.classList.contains('delete')) {
       const ui = new UI();
       ui.deletePaseo(e.target.getAttribute('_id'));
+      ui.renderMessage('travel removed', 'danger', 3000)
    }
    e.preventDefault();
 });

@@ -46,8 +46,18 @@ class UI {
         
     }
     
-    renderMessage() {
+    renderMessage(message, colorMsg, timeToRemove) {
+        const div = document.createElement('div');
+        div.className = `alert alert-${colorMsg} message`
+        div.appendChild(document.createTextNode(message));
 
+        
+        const constainer = document.querySelector('.col-md-4');
+        const paseoForm = document.querySelector('#galeries');
+        constainer.insertBefore(div, paseoForm);
+        setTimeout( () => {
+            document.querySelector('.message').remove();
+        }, timeToRemove)
     }
 
     async deletePaseo(paseoId){
