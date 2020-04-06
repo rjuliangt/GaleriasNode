@@ -1,5 +1,7 @@
 const {Router} = require('express');
 const router =  Router();
+const { unlink }= require('fs-extra')
+const path = require('path')
 
 const Gallery = require('../models/galleries');
 
@@ -22,8 +24,9 @@ router.post('/', async (req,res) => {
 router.delete('/:id', async (req,res) =>{
     // console.log(req.params.id);
     // const delGallery = await Gallery.findByIdAndDelete(req.params.id);
-    await Gallery.findByIdAndDelete(req.params.id);
-    // console.log(delGallery);
+   const paseo = await Gallery.findByIdAndDelete(req.params.id);
+   unlink(path.resolve('./Backend/public'+paseo.imagePath)) 
+   // console.log(delGallery);
     // res.send("deleting");
     res.json({message:"galery deleted"})
 })
