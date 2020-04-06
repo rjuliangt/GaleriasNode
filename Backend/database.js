@@ -7,5 +7,4 @@ mongoose.connect(process.env.MONGODB_URL,{
    useUnifiedTopology: true 
 })
     .then(db => console.log('Db is connected...') ) //conexion suceful
-    .catch(err => console.err(err)); //error in conexion
-    
+    .catch(err => console.error(err)); //error in conexion

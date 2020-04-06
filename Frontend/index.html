@@ -1,0 +1,44 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeGalery</title>
+    <!-- Bootstrap 4 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- animation css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+</head>
+<body> 
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand">Galeria App</a>
+        </nav>
+    </div>
+
+    <div class="container p-4">
+        <div class="row">
+           <div class="col-md-4">
+            <form id="galeries" class="card card-body">
+            <div class="form-group">
+                <input type="text" id="name" class="form-control" placeholder="T&iacute;tulo de la Foto" autofocus>                
+            </div>
+            <div class="form-group">
+                <input type="text" id="country" class="form-control" placeholder="Nombre del Lugar ">
+             </div>
+             <div class="form-group">
+                <input type="text" id="isbn" class="form-control" placeholder="ibsn-fotografia">
+            </div>
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                <input type="file" id="image" class="custom-file-input">
+                 <label for="image" class="custom-file-label">Escoge una imagen</label>
+            </div>
+        </div>
+        <button class="btn btn-dark">Guardar</button>
+    </form>
+    </div>
+    <div class="col-md-8" id=galeries-cards></div>
+    </div>
+    </div>
+    </body>
+    </html>
