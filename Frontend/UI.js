@@ -36,20 +36,23 @@ class UI {
 
     async AddNewPaseo(paseo) {
         await galeriesServ.postPaseo(paseo);
+        this.clearForm();
+        this.renderPaseos();
     }
     
     clearForm() {
         document.getElementById('galeries').reset();
-        this.clearForm();
-        this.renderPaseos();
+        
+        
     }
     
     renderMessage() {
 
     }
 
-    deletePaseo(){
-
+    async deletePaseo(paseoId){
+        await galeriesServ.deletePaseo(paseoId);
+        this.renderPaseos();
     }
 }
 

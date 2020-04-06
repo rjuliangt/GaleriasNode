@@ -22,8 +22,7 @@ class GaleriesService {
                 'Content-type': 'application/json'
             },
             method: "DELETE",
-            body: paseo}
-        )
+        })
      const data= await res.json();
      console.log(data)
     }

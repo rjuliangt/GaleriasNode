@@ -27,6 +27,8 @@ document.getElementById('galeries')
 document.getElementById('galeries-cards')
 .addEventListener('click', e =>{
    if(e.target.classList.contains('delete')) {
-      console.log(e.target.getAttribute('_id'))
+      const ui = new UI();
+      ui.deletePaseo(e.target.getAttribute('_id'));
    }
+   e.preventDefault();
 });
