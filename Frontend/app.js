@@ -1,5 +1,11 @@
-require('./style/app.css');
-import GaleriesServices from "./services/GaleriesServices"
+import './style/app.css';
+import UI from './UI';
+
+document.addEventListener('DOMContentLoaded', () => {
+   const ui = new UI()
+   ui.renderPaseos();
+})
+
 document.getElementById('galeries')
 .addEventListener('submit', e =>{
    const name = document.getElementById('name').value;
@@ -12,9 +18,15 @@ document.getElementById('galeries')
    fromData.append('name',name);
    fromData.append('country',country);
    fromData.append('isbn',isbn);
-   
-   const galeriesServ =new GaleriesServices();
-   galeriesServ.postPaseo(fromData);
+   const ui = new UI();
+   ui.AddNewPaseo(fromData);
    console.log(name,country,isbn,imag[0])
    e.preventDefault();
-})
+});
+
+document.getElementById('galeries-cards')
+.addEventListener('click', e =>{
+   if(e.target.classList.contains('delete')) {
+      console.log(e.target.getAttribute('_id'))
+   }
+});
