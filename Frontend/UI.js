@@ -1,6 +1,8 @@
 import GaleriesServices from "./services/GaleriesServices"
 const galeriesServ =new GaleriesServices();
 import { format  } from "timeago.js";
+{/* <div class="col-md-4"> */}
+{/* <div class="col-md-4"> */}
 
 class UI {
 
@@ -10,24 +12,22 @@ class UI {
        containerGaleri.innerHTML = '';
        paseos.forEach(paseo => {
            const div = document.createElement('div');
-           div.className = '';
+           div.className = 'card col-md-4 col-lg-4 col-sm-4 mr-5 mb-4';
            div.innerHTML = `
-           <div class="card m-2">
-                <div class="row">
-                    <div class="col-md-4">
-                        <img src="http://localhost:3000${paseo.imagePath}" alt="" class="img-fluid"/>
-                    </div> 
-                    <div class="col-md'8 ">
-                        <div class="card-block px-2">
-                        <h4 class="card-title">${paseo.name}</h4>
-                        <p class="card-text">${paseo.country}</p>
-                        <a href="#" class="btn btn-danger delete" _id="${paseo._id}" >Eliminar</a>
-
-                        </div>    
-                    </div> 
-                </div>
+           <div class="">
+           <div class="img-fluid">
+           <div>
+           <img src="http://localhost:3000${paseo.imagePath}" alt="" class="card-img-top mt-2"/>    
+           </div>
+           </div>
+                <div class="card-body px-2">
+                    <h4 class="card-title">${paseo.name}</h4>
+                    <p class="card-text ">${paseo.country}</p>
+                    <a href="#" class="btn btn-danger delete" _id="${paseo._id}" >Eliminar</a                           </div>    
+                </div> 
                 <div class="card-footer">${format(paseo.date)}</div>
            </div>
+    
            `;
         containerGaleri.appendChild(div)
        });
